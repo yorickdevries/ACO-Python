@@ -1,5 +1,5 @@
+from src.Direction import Direction
 
-#SERIALIZABLE
 # Class representing a coordinate.
 class Coordinate:
 
@@ -21,7 +21,7 @@ class Coordinate:
     # @param dir direction of unit move
     # @return result the new coordinate
     def add_direction(self, dir):
-         return self.add_coordinate(Direction.dir_to_coordinate_delta)
+         return self.add_coordinate(Direction.dir_to_coordinate_delta(dir))
 
     # Substract a coordinate from the current coordinate
     # @param other the to be subtracted coordinate
@@ -65,7 +65,7 @@ class Coordinate:
     # Returns x position
     # @return x
     def get_x(self):
-        return self.x;
+        return self.x
 
     # Returns y position
     # @return y

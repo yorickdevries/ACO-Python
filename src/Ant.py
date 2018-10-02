@@ -1,9 +1,7 @@
 import random
-
-#Class that represents the ants functionality.
 from src.Route import Route
 
-
+#Class that represents the ants functionality.
 class Ant:
 
     # Constructor for ant taking a Maze and PathSpecification.

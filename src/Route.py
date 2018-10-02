@@ -1,5 +1,3 @@
-
-#SERIALIZABLE
 # Class representing a route.
 from src.Direction import Direction
 
@@ -66,9 +64,9 @@ class Route:
     def write_to_file(self, file_path):
         f = open(file_path, "w")
         string = ""
-        string += str(self.route.size())
+        string += str(len(self.route))
         string += ";\n"
         string += str(self.start)
         string += ";\n"
-        string += self.toString()
+        string += str(self)
         f.write(string)

@@ -1,19 +1,14 @@
 import pickle
-
-#SERIALIZABLE
-# Class containing the product distances. Can be either build from a maze, a product
-# location list and a PathSpecification or be reloaded from a file.
 import re
 import traceback
-
 import sys
-
 from src.AntColonyOptimization import AntColonyOptimization
 from src.Coordinate import Coordinate
 from src.Maze import Maze
 from src.PathSpecification import PathSpecification
 
-
+# Class containing the product distances. Can be either build from a maze, a product
+# location list and a PathSpecification or be reloaded from a file.
 class TSPData:
 
     # Constructs a new TSP data object.
@@ -76,7 +71,7 @@ class TSPData:
                and self.product_to_product == other.product_to_product \
                and self.product_to_end == other.product_to_end \
                and self.start_to_product == other.start_to_product \
-               and self.spec.eq(other.spec) \
+               and self.spec == other.spec \
                and self.product_locations == other.product_locations
 
     # Persist object to file so that it can be reused later

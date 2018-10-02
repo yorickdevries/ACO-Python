@@ -41,7 +41,7 @@ if __name__ == "__main__":
     persistFile = "./tmp/productMatrixDist"
         
     #setup optimization
-    tsp_data = TSPData.readFromFile(persistFile)
+    tsp_data = TSPData.read_from_file(persistFile)
     ga = GeneticAlgorithm(generations, population_size)
 
     #run optimzation and write to file

@@ -1,10 +1,8 @@
-# Class that holds all the maze data. This means the pheromones, the open and blocked tiles in the system as
-# well as the starting and end coordinates.
 import traceback
-
 import sys
 
-
+# Class that holds all the maze data. This means the pheromones, the open and blocked tiles in the system as
+# well as the starting and end coordinates.
 class Maze:
 
     # Constructor of a maze
