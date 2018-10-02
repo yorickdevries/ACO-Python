@@ -1,1 +1,3 @@
+
+#SERIALIZABLE
 class PathSpecification:

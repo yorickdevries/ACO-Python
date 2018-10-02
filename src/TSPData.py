@@ -1,1 +1,2 @@
+#SERIALIZABLE
 class TSPData:

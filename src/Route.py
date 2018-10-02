@@ -1,1 +1,3 @@
+
+#SERIALIZABLE
 class Route:

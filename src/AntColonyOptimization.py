@@ -1,5 +1,6 @@
 import time
-from src import Maze, PathSpecification
+from src.Maze import Maze
+from src.PathSpecification import PathSpecification
 
 # Class representing the first assignment. Finds shortest path between two points in a maze according to a specific
 # path specification.
@@ -45,7 +46,7 @@ if __name__ == "__main__":
     shortest_route = aco.find_shortest_route(spec)
 
     #print time taken
-    print("Time taken: " + str((int(round(time.time() * 1000)) - start_time) / 1000.0)))
+    print("Time taken: " + str((int(round(time.time() * 1000)) - start_time) / 1000.0))
 
     #save solution
     shortest_route.write_to_file("./data/hard_solution.txt")
