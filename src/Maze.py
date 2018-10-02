@@ -110,7 +110,7 @@ class Maze:
                 line = lines[y+1].split(" ")
                 for x in range(width):
                     if line[x] != "":
-                        state = line[x]
+                        state = int(line[x])
                         maze_layout[x].append(state)
             print("Ready reading maze file " + file_path)
             return Maze(maze_layout, width, length)

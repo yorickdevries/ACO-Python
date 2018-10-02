@@ -33,7 +33,7 @@ class PathSpecification:
 
     # String representation of path specification
     # @return representation
-    def __str(self):
+    def __str__(self):
         return "Start: " + str(self.start) + " End: " + str(self.end)
 
 
