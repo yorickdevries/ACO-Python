@@ -1,7 +1,7 @@
 import random
 
 #Class that represents the ants functionality.
-from src.Route import Route
+from src import Route
 
 
 class Ant:
@@ -20,3 +20,4 @@ class Ant:
     # @return The route the ant found through the maze.
     def find_route(self):
         route = Route(self.start)
+        return route
