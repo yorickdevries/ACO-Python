@@ -38,8 +38,8 @@ if __name__ == "__main__":
     evap = 0.1
 
     #construct the optimization objects
-    maze = Maze.create_maze("./data/hard maze.txt")
-    spec = PathSpecification.read_coordinates("./data/hard coordinates.txt")
+    maze = Maze.create_maze("./../data/hard maze.txt")
+    spec = PathSpecification.read_coordinates("./../data/hard coordinates.txt")
     aco = AntColonyOptimization(maze, gen, no_gen, q, evap)
 
     #save starting time
@@ -52,7 +52,7 @@ if __name__ == "__main__":
     print("Time taken: " + str((int(round(time.time() * 1000)) - start_time) / 1000.0))
 
     #save solution
-    shortest_route.write_to_file("./data/hard_solution.txt")
+    shortest_route.write_to_file("./../data/hard_solution.txt")
 
     #print route size
-    print("Route size: " + shortest_route.size())
+    print("Route size: " + str(shortest_route.size()))
