@@ -1,3 +1,6 @@
+import os, sys
+sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+
 from src.Direction import Direction
 
 # Class representing a coordinate.
@@ -21,7 +24,7 @@ class Coordinate:
     # @param dir direction of unit move
     # @return result the new coordinate
     def add_direction(self, dir):
-         return self.add_coordinate(Direction.dir_to_coordinate_delta(dir))
+         return self.add_coordinate(self.dir_to_coordinate_delta(dir))
 
     # Substract a coordinate from the current coordinate
     # @param other the to be subtracted coordinate
@@ -34,7 +37,7 @@ class Coordinate:
         # @return result the new coordinate
 
     def subtract_direction(self, dir):
-        return self.subtract_coordinate(Direction.dirToCoordinateDelta(dir))
+        return self.subtract_coordinate(self.dir_to_coordinate_delta(dir))
 
     # String representation of coordinate
     # @return String representation of coordinate
@@ -71,3 +74,16 @@ class Coordinate:
     # @return y
     def get_y(self):
         return self.y
+
+    # Get vector (coordinate) of a certain direction.
+    # @param dir the direction
+    # @return the coordinate
+    def dir_to_coordinate_delta(self, dir):
+        # all directions in a vector
+        # Creates a map with a direction linked to its (direction) vector.
+        map = {}
+        map[Direction.east] = Coordinate(1, 0)
+        map[Direction.west] = Coordinate(-1, 0)
+        map[Direction.north] = Coordinate(0, -1)
+        map[Direction.south] = Coordinate(0, 1)
+        return map[dir]

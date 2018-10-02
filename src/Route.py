@@ -1,7 +1,9 @@
-# Class representing a route.
+import os, sys
+sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+
 from src.Direction import Direction
 
-
+# Class representing a route.
 class Route:
 
     # Route takes a starting coordinate to initialize
@@ -55,7 +57,7 @@ class Route:
     # @param other Other route
     # @return boolean whether they are equal
     def __eq__(self, other):
-        return self.start.eq(other.start) and self.route == other.route
+        return self.start == other.start and self.route == other.route
 
 
     # Method that implements the specified format for writing a route to a file.

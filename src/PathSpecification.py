@@ -1,6 +1,8 @@
+import os, sys
+sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+
 import re
 import traceback
-import sys
 from src.Coordinate import Coordinate
 
 # Specification of a path containing a start and end coordinate.
@@ -27,7 +29,7 @@ class PathSpecification:
     # @param other other PathSpecification
     # @return whether they're equal
     def __eq__(self, other):
-        return self.start.eq(other.start) and self.end.eq(other.end)
+        return self.start == other.start and self.end == other.end
 
     # String representation of path specification
     # @return representation
