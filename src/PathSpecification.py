@@ -44,9 +44,8 @@ class PathSpecification:
     # Reads the coordinates file and returns a path specification
     # @param filePath String of the path to the file
     # @return Specification contained in the file
-    def read_coordinates(self, file_path):
-        
-        
+    @staticmethod
+    def read_coordinates(file_path):
         try:
             f = open(file_path, "r")
             lines = f.read().splitlines()

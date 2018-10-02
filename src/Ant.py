@@ -1,7 +1,7 @@
 import random
 
 #Class that represents the ants functionality.
-from src import Route
+from src.Route import Route
 
 
 class Ant:

@@ -91,7 +91,8 @@ class Maze:
     # Method that builds a mze from a file
     # @param filePath Path to the file
     # @return A maze object with pheromones initialized to 0's inaccessible and 1's accessible.
-    def create_maze(self, file_path):
+    @staticmethod
+    def create_maze(file_path):
         try:
             f = open(file_path, "r")
             lines = f.read().splitlines()
