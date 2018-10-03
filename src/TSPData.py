@@ -89,7 +89,7 @@ class TSPData:
     # @param filePath Path to the solution file
     def write_action_file(self, product_order, file_path):
         total_length = self.start_distances[product_order[0]]
-        for i in range(len(product_order)):
+        for i in range(len(product_order) - 1):
             frm = product_order[i]
             to = product_order[i + 1]
             total_length += self.distances[frm][to]
@@ -101,19 +101,19 @@ class TSPData:
         string += ";\n"
         string += str(self.spec.get_start())
         string += ";\n"
-        string += self.start_to_product(product_order[0])
+        string += str(self.start_to_product[product_order[0]])
         string += "take product #"
-        string += product_order[0] + 1
+        string += str(product_order[0] + 1)
         string += ";\n"
 
         for i in range(len(product_order) - 1):
             frm = product_order[i]
             to = product_order[i + 1]
-            string += self.product_to_product[frm][to]
+            string += str(self.product_to_product[frm][to])
             string += "take product #"
             string += str(to + 1)
             string += ";\n"
-        string += self.product_to_end[product_order[len(product_order) - 1]]
+        string += str(self.product_to_end[product_order[len(product_order) - 1]])
 
         f = open(file_path, "w")
         f.write(string)
