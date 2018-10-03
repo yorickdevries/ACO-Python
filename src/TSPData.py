@@ -4,7 +4,6 @@ sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 import pickle
 import re
 import traceback
-import sys
 from src.AntColonyOptimization import AntColonyOptimization
 from src.Coordinate import Coordinate
 from src.Maze import Maze

@@ -2,11 +2,9 @@ import os, sys
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 
 import random
-
-# TSP problem solver using genetic algorithms.
 from src.TSPData import TSPData
 
-
+# TSP problem solver using genetic algorithms.
 class GeneticAlgorithm:
 
     # Constructs a new 'genetic algorithm' object.

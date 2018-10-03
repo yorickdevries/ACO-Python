@@ -2,7 +2,6 @@ import os, sys
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 
 import traceback
-import sys
 
 # Class that holds all the maze data. This means the pheromones, the open and blocked tiles in the system as
 # well as the starting and end coordinates.
