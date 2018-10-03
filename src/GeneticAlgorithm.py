@@ -31,9 +31,7 @@ class GeneticAlgorithm:
     # @param pd the TSP data.
     # @return the optimized product sequence.
     def solve_tsp(self, tsp_data):
-        list = []
-        for i in range(18):
-            list.append(i)
+        list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17]
         return list
 
 # Assignment 2.b
@@ -41,7 +39,7 @@ if __name__ == "__main__":
     #parameters
     population_size = 20
     generations = 20
-    persistFile = "./tmp/productMatrixDist"
+    persistFile = "./../tmp/productMatrixDist"
         
     #setup optimization
     tsp_data = TSPData.read_from_file(persistFile)
@@ -49,4 +47,4 @@ if __name__ == "__main__":
 
     #run optimzation and write to file
     solution = ga.solve_tsp(tsp_data)
-    tsp_data.writeActionFile(solution, "./data/TSP solution.txt")
+    tsp_data.write_action_file(solution, "./../data/TSP solution.txt")
