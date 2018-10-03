@@ -36,6 +36,7 @@ class TSPData:
         self.start_to_product = self.build_start_to_products(aco)
         self.product_to_end = self.build_products_to_end(aco)
         self.build_distance_lists()
+        return
 
     # Build a list of integer distances of all the product-product routes.
     def build_distance_lists(self):
@@ -45,11 +46,12 @@ class TSPData:
         self.end_distances = []
 
         for i in range(number_of_products):
-            self.distances[i] = []
+            self.distances.append([])
             for j in range(number_of_products):
-                self.distances[i][j].append(len(self.product_to_product[i][j]))
-            self.start_distances.append(len(self.start_to_product[i]))
-            self.end_distances.append(len(self.product_to_end[i]))
+                self.distances[i].append(self.product_to_product[i][j].size())
+            self.start_distances.append(self.start_to_product[i].size())
+            self.end_distances.append(self.product_to_end[i].size())
+        return
 
     # Distance product to product getter
     # @return the list
@@ -120,14 +122,14 @@ class TSPData:
     # @param maze Maze to calculate optimal routes in
     # @return Optimal routes between all products in 2d array
     def build_distance_matrix(self, aco):
-        number_of_product = len(self.product_locations.size)
+        number_of_product = len(self.product_locations)
         product_to_product = []
         for i in range(number_of_product):
-            product_to_product[i] = []
+            product_to_product.append([])
             for j in range(number_of_product):
                 start = self.product_locations[i]
                 end = self.product_locations[j]
-                product_to_product.append(aco.find_shortest_route(PathSpecification(start, end)))
+                product_to_product[i].append(aco.find_shortest_route(PathSpecification(start, end)))
         return product_to_product
 
 
@@ -191,12 +193,12 @@ if __name__ == "__main__":
     no_gen = 1
     q = 1000
     evap = 0.1
-    persist_file = "./tmp/productMatrixDist"
-    tsp_path = "./data/tsp products.txt"
-    coordinates = "./data/hard coordinates.txt"
+    persist_file = "./../tmp/productMatrixDist"
+    tsp_path = "./../data/tsp products.txt"
+    coordinates = "./../data/hard coordinates.txt"
         
     #construct optimization
-    maze = Maze.create_maze("./data/hard maze.txt")
+    maze = Maze.create_maze("./../data/hard maze.txt")
     pd = TSPData.read_specification(coordinates, tsp_path)
     aco = AntColonyOptimization(maze, gen, no_gen, q, evap)
         
